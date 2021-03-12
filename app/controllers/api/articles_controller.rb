@@ -7,12 +7,19 @@ class Api::ArticlesController < ApplicationController
 
 
   def show
-
+    @article = Article.find(params[:id])
+    render json: @article
   end
 
 
   def create 
+    @article = Article.new(article_params)
 
+    if @article.save 
+      render json: @article
+    else
+      render json: {errors: @article.errors}, status: 422
+    end
   end
 
 
