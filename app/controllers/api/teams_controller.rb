@@ -4,8 +4,8 @@ class Api::TeamsController < ApplicationController
   end
 
   def show
-    teams = Team.find (params [:id])
-    render json: {teams: team, player: player.name, job: position }
+    team = Team.find(params[:id])
+    render json: {team: team, players: team.players }
   end
 
   def create
