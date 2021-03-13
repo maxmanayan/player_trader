@@ -43,6 +43,7 @@ const NewPlayerForm = () => {
         </Form.Field>
         
         <Button type='submit'>Submit</Button>
+        <Button onClick={() => history.push(`/teams/${team_id}`)}>Cancel</Button>
       </Form>
 
     </div>
