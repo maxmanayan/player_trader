@@ -5,7 +5,7 @@ import { Menu } from 'semantic-ui-react'
 const Navbar = () => {
     return (
         
-        <Menu style={{margin: '0'}}>
+        <Menu inverted style={{margin: '0'}}>
             <Link to='/'>
             <Menu.Item>
                 Home

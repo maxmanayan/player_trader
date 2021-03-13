@@ -47,6 +47,7 @@ const About = () => {
     </Segment>
     </div>
     </div>
+    <footer></footer>
 
   </div>
 

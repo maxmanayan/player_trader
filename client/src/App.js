@@ -18,6 +18,7 @@ import NewFormJob from './components/NewJobForm'
 
 import NewTeamForm from './components/NewTeamForm';
 import NewArticlesForm from './components/NewArticlesForm';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
       <Route exact path = '/articles/new' component={NewArticlesForm} />
       <Route exact path = '/players' component={Players} />
     </Switch>
+    {/* <Footer /> */}
     </div>
   );
 }
