@@ -39,9 +39,9 @@ const renderJobs = () => {
 }
 
   return(
-    <div style={{margin: '2em'}}>
+    <div className='jobs' >
     <Button onClick={()=>history.goBack()}>Go Back</Button>
-    <Card>
+    <Card style={{margin: '2em'}}>
       <Card.Content>
         <Card.Header style={{display:'flex', justifyContent: 'space between'}}>{jobs.team}</Card.Header>
         <Card.Meta>{jobs.position}</Card.Meta>
