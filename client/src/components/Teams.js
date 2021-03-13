@@ -65,7 +65,14 @@ const Teams = () => {
     }
     return (
         <div>
+            <Card fluid color='blue'>
+            <div style={{display:'flex', justifyContent:'space-between', padding:'10px'}}>
             <h1>Teams</h1>
+            <Link to={`/teams/new`}>
+            <Button>New Team Form</Button>
+            </Link>
+            </div>
+            </Card>
             {renderTeams()}
             </div>
 
