@@ -80,12 +80,18 @@ const Team = () => {
                     </Card.Content>
                 </Card>
             </Card.Group>
-            <Link to={{pathname: `/teams/${id}/players/new`}}>
-                <Button>Add New Player</Button>
-            </Link>
+            <Card.Group style={{display: 'flex', justifyContent: 'space-between', alignContent: 'center'}}>
+                <Link to={{pathname: `/teams/${id}/players/new`}}>
+                    <Button>Add New Player</Button>
+                </Link>
+                <Link to={'/teams'}>
+                    <Button>Back to Teams</Button>
+                </Link>
+            </Card.Group>
             <Card.Group itemsPerRow={6}>
                 {renderPlayers()}
             </Card.Group>
+            
 
         </div>
     
