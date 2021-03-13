@@ -1,5 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import { Button, Card, Grid } from "semantic-ui-react"
 
 const Players = () => {
     const [players, setPlayers] = useState([])
@@ -20,15 +22,49 @@ const Players = () => {
     const renderAllPlayers = () => {
         return players.map( player => {
             return(
-                <div>
-                    <h1>All Players List</h1>
-                </div>
+                <Card.Group>
+                <Card>
+                    <Card.Content style={{background: 'whitesmoke'}}>
+                        <Card.Header>Player {player.id}: {player.name}</Card.Header>
+                        <Card.Meta>Position: {player.position}</Card.Meta>
+                        <Card.Meta>Value: ${player.value} million</Card.Meta>
+                        <Card.Meta>Age: {player.age}</Card.Meta>
+                    </Card.Content>
+                    <Card.Content style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                        <Card.Meta>Click to view current team</Card.Meta>
+                        <Link to={`/teams/${player.team_id}`}>
+                            <Button>View</Button>
+                        </Link>
+                    </Card.Content>
+                    {/* <Card.Content extra>
+                    <div className='ui two buttons'>
+                        <Link to={`/teams/${id}/players/${player.id}/edit`}>
+                            <Button basic color='green'>
+                            Update
+                            </Button>
+                        </Link>
+                        <Button onClick={() => deletePlayer(id, player.id)} basic color='red'>
+                        Delete
+                        </Button>
+                    </div>
+                    </Card.Content> */}
+                </Card>
+            
+            </Card.Group>
+
             )
         })
     }
 
     return (
-    <h1>All players</h1>
+        <div>
+            <h1>All players</h1>
+            <Grid>
+             {renderAllPlayers()}
+
+            </Grid>
+
+        </div>
     )
 }
 
