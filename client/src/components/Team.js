@@ -27,6 +27,15 @@ const Team = () => {
     }
 
 
+    const deletePlayer = async (id, player_id) => {
+        try {
+            await axios.delete(`/api/teams/${id}/players/${player_id}`)
+            window.location.reload()
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     const renderPlayers = () => {
         return players.map( player => {
             return(
@@ -53,7 +62,7 @@ const Team = () => {
                                 Update
                                 </Button>
                             </Link>
-                            <Button basic color='red'>
+                            <Button onClick={() => deletePlayer(id, player.id)} basic color='red'>
                             Delete
                             </Button>
                         </div>
@@ -62,18 +71,11 @@ const Team = () => {
                 
                 </Card.Group>
 
+
             )
         })
     }
 
-    const deletePlayer = async () => {
-        try {
-            
-        } catch (err) {
-            console.log(err)
-        }
-    }
-    
     return (
         <div style={{margin: '2em'}}>
             <Card.Group>
