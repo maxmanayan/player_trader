@@ -15,6 +15,7 @@ import EditTeamForm from './components/EditTeamForm';
 import EditPlayerForm from './components/EditPlayerForm';
 import EditJobForm from './components/EditJobForm';
 
+import NewTeamForm from './components/NewTeamForm';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
     <Switch>
       <Route exact path = '/' component={Homepage} />
       <Route exact path = '/teams' component={Teams} />
+      <Route exact path = '/teams/new' component={NewTeamForm} />
       <Route exact path = '/teams/:id/edit' component={EditTeamForm} />
       <Route exact path = '/teams/:id' component={Team} />
       <Route exact path = '/teams/:team_id/players/new' component={NewPlayerForm} />
