@@ -64,7 +64,7 @@ const Teams = () => {
 
     }
     return (
-        <div>
+        <div className='teams-page'>
             <Card fluid color='blue'>
             <div style={{display:'flex', justifyContent:'space-between', padding:'10px'}}>
             <h1>Teams</h1>

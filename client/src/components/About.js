@@ -3,7 +3,7 @@ import { Header, Segment } from "semantic-ui-react"
 const About = () => {
 
     return (
-        <div>
+        <div className='about'>
     <Header as='h2' attached='top' style={{textAlign: 'center'}}>
       About
     </Header>

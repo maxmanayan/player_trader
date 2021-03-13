@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import { useHistory, useParams } from 'react-router';
-import { Button, Card } from 'semantic-ui-react';
+import { Button, Card, Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const Team = () => {
@@ -49,7 +49,7 @@ const Team = () => {
 
                 // </Card.Card.Group>
 
-                <Card.Group>
+                <Card.Group >
                     <Card>
                         <Card.Content style={{background: 'whitesmoke'}}>
                             <Card.Header>Player: {player.name}</Card.Header>
@@ -88,9 +88,9 @@ const Team = () => {
     }
 
     return (
-        <div style={{margin: '2em'}}>
+        <div className='teams-page' style={{marginTop: '1em'}}>
             <Card.Group>
-                <Card fluid color='red' >
+                <Card fluid color='red' style={{margin: '2em'}}>
                     <Card.Content style={{display: 'flex', justifyContent: 'space-between', alignContent: 'center'}}>
                         <h1>Team: {team.name}</h1>
                         <h2>Coach: {team.coach}</h2>
@@ -113,13 +113,12 @@ const Team = () => {
                     <Button>Back to Teams</Button>
                 </Link>
             </Card.Group>
-            <Card.Group itemsPerRow={6}>
+            <Grid style={{marginTop: '2em'}}>
                 {renderPlayers()}
-            </Card.Group>
+            </Grid>
             
+            </div>
 
-        </div>
-    
     )
     }
     
