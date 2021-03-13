@@ -41,9 +41,10 @@ const Teams = () => {
                     <Card.Description>
                      {team.stadium}
                     </Card.Description> 
-                    <Button onClick={()=>{setShowForm(!showForm)}}>Edit</Button>
+                    <Link to={`/teams/${team.id}/edit`}>
+                    <Button>Edit</Button>
+                    </Link>
                     <Button color='red'>Delete</Button>
-                    {showForm && <EditTeamForm />}
                  </Card.Content> 
                  </Card>
                  
