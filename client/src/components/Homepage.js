@@ -10,6 +10,9 @@ return (
     <Link to='/teams'>
     <Button style={{margin: '5px'}}>Teams</Button>
     </Link>
+    <Link to='/players'>
+    <Button style={{margin: '5px'}}>Players</Button>
+    </Link>
     <Link to='/jobs'>
     <Button style={{margin: '5px'}}>Jobs</Button>
     </Link>

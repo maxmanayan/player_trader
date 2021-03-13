@@ -8,12 +8,17 @@ const Navbar = () => {
         <Menu>
             <Link to='/'>
             <Menu.Item>
-                HomePage
+                Home
             </Menu.Item>
             </Link>
             <Link to='/teams'>
             <Menu.Item>
                 Teams
+            </Menu.Item>
+            </Link>
+            <Link to='/players'>
+            <Menu.Item>
+                Players
             </Menu.Item>
             </Link>
             <Link to='/jobs'>

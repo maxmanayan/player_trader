@@ -8,6 +8,7 @@ import Jobs from './components/Jobs';
 import Team from './components/Team';
 import Teams from './components/Teams';
 import Navbar from './components/Navbar'
+import Players from './components/Players';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route exact path = '/about' component={About} />
       <Route exact path = '/jobs' component={Jobs} />
       <Route exact path = '/articles' component={Articles} />
+      <Route exact path = '/players' component={Players} />
     </Switch>
     </>
   );
