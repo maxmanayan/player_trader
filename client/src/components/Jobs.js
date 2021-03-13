@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import Job from './Job'
 import { Button, Card } from 'semantic-ui-react'
-import {useHistory, useParams} from 'react-router-dom'
+import {Link, useHistory, useParams} from 'react-router-dom'
     
 const Jobs = () => {
 // const {id } = useParams()
@@ -38,7 +38,9 @@ const Jobs = () => {
                 <Card.Meta>{job.position}</Card.Meta>
                 <Card.Description>{job.salary}</Card.Description>
                 <Card.Description>{job.location}</Card.Description>
+                <Link to={`/jobs/${job.id}/edit`}>
                 <Button>Edit</Button>
+                </Link>
                 <Button onClick={()=>deleteJob(job.id)} color='red'>Delete</Button>
                 </Card>
             )
