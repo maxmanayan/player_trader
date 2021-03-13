@@ -1,10 +1,14 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import Job from './Job'
+import { Button, Card } from 'semantic-ui-react'
+import {useHistory, useParams} from 'react-router-dom'
     
 const Jobs = () => {
+// const {id } = useParams()
 
     const [jobs, setJobs] = useState([])
+    let history = useHistory()
 
     useEffect(() =>{
         getJobs()
@@ -19,16 +23,24 @@ const Jobs = () => {
         }
     }
 
+    const deleteJob = async (id) => {
+        let res = await axios.delete(`/api/jobs/${id}`)
+        history.push('/jobs')
+        window.location.reload()
+    }
+
     const renderJobs =() =>{
         return jobs.map( job => {
             return (
-                <div>
-                <h1>{job.id}</h1>
-                <p>{job.team}</p>
-                <p>{job.position}</p>
-                <p>{job.salary}</p>
-                <p>{job.location}</p>
-                </div>
+                <Card>
+                <Card.Content>{job.id}</Card.Content>
+                <Card.Header>{job.team}</Card.Header>
+                <Card.Meta>{job.position}</Card.Meta>
+                <Card.Description>{job.salary}</Card.Description>
+                <Card.Description>{job.location}</Card.Description>
+                <Button>Edit</Button>
+                <Button onClick={()=>deleteJob(job.id)} color='red'>Delete</Button>
+                </Card>
             )
         })
     }

@@ -12,6 +12,7 @@ import Navbar from './components/Navbar'
 import Players from './components/Players';
 import NewPlayerForm from './components/NewPlayerForm';
 import EditTeamForm from './components/EditTeamForm';
+import EditPlayerForm from './components/EditPlayerForm';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route exact path = '/teams/:id/edit' component={EditTeamForm} />
       <Route exact path = '/teams/:id' component={Team} />
       <Route exact path = '/teams/:team_id/players/new' component={NewPlayerForm} />
+      <Route exact path = '/teams/:team_id/players/:id/edit' component={EditPlayerForm} />
       <Route exact path = '/about' component={About} />
       <Route exact path = '/jobs' component={Jobs} />
       <Route exact path = '/job/:id' component={Job} />
