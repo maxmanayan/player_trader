@@ -49,7 +49,11 @@ const Jobs = () => {
     return (
         <div>
              <h1>Jobs</h1>
+             <Link to={`/jobs/new`}>
+                 <Button>New Job</Button>
+             </Link>
              {renderJobs()}
+             
         </div>
     
     
