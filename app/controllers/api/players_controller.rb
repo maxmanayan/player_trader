@@ -1,5 +1,5 @@
 class Api::PlayersController < ApplicationController
-  before_action :get_team
+  before_action :get_team, only: [:index, :show, :create, :update, :destroy]
 
   def index 
     @players = @team.players.all
@@ -41,6 +41,13 @@ class Api::PlayersController < ApplicationController
     @player = @team.players.find(params[:id])
     @player.destroy 
     render json: @player
+  end
+
+
+  def all_players 
+    @players = Player.all 
+
+    render json: @players
   end
 
 

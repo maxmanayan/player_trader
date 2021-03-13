@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     resources :jobs 
     resources :articles
   end
+
+  get '/api/all_players', to: 'api/players#all_players'
   
 end
