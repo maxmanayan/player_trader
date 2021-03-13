@@ -9,12 +9,7 @@ const EditTeamForm = () => {
     useEffect(() => {
         getTeam()
     },[])
-
-   const [nameInit, setNameInit] = useState('')
-   const [coachInit, setCoachInit] = useState('')
-   const [stadiumInit, setStadiumInit] = useState('')
-   const [mascotInit, setMascotInit] = useState('')
-    const [name, setName] = useState(nameInit)
+    const [name, setName] = useState('')
     const [coach, setCoach] = useState('')
     const [mascot, setMascot] = useState('')
     const [stadium, setStadium] = useState('')
@@ -22,10 +17,10 @@ const EditTeamForm = () => {
 
     const getTeam = async() => {try{ 
         let res = await axios.get(`/api/teams/${id}`)
-        setNameInit(res.data.team.name)
-        setCoachInit(res.data.team.coach)
-        setStadiumInit(res.data.team.stadium)
-        setMascotInit(res.data.team.mascot)
+        setName(res.data.team.name)
+        setCoach(res.data.team.coach)
+        setStadium(res.data.team.stadium)
+        setMascot(res.data.team.mascot)
         console.log(res.data.team.name)
 
     }catch (err){
@@ -51,7 +46,7 @@ const EditTeamForm = () => {
     <div>
         <div>
         <h1> Edit Form </h1>
-        <h1> Editing Team: {nameInit}</h1>
+        <h1> Editing Team: {name}</h1>
         <Button onClick={history.goBack}>Go back</Button>
             </div>
             <Form onSubmit={handleSubmit}>
@@ -59,7 +54,7 @@ const EditTeamForm = () => {
                 <p>Name</p>
                 <input value={name}
                 onChange={(e) => setName(e.target.value)}
-                defaultValue={nameInit}
+                defaultValue={name}
                 
                 placeholder='Edit name' />
                 
