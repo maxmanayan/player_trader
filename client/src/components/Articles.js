@@ -59,7 +59,7 @@ import { Card, Button, Container, CardMeta, CardHeader, CardDescription, Grid } 
 
 
         return (
-            <div>
+            <div className='articles'>
                         {/* <h1>Articles</h1>
                     <Link to={`articles/new`}>
                     <Button>New Article</Button>
