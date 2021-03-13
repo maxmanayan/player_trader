@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { Button, Card } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
@@ -10,6 +10,8 @@ const Team = () => {
     const [players, setPlayers] = useState([])
 
     const {id} = useParams()
+
+    const history = useHistory()
 
     useEffect(()=>{
         getTeam()
@@ -26,6 +28,15 @@ const Team = () => {
         }
     }
 
+
+    const deletePlayer = async (id, player_id) => {
+        try {
+            await axios.delete(`/api/teams/${id}/players/${player_id}`)
+            window.location.reload()
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     const renderPlayers = () => {
         return players.map( player => {
@@ -53,7 +64,7 @@ const Team = () => {
                                 Update
                                 </Button>
                             </Link>
-                            <Button basic color='red'>
+                            <Button onClick={() => deletePlayer(id, player.id)} basic color='red'>
                             Delete
                             </Button>
                         </div>
@@ -62,10 +73,20 @@ const Team = () => {
                 
                 </Card.Group>
 
+
             )
         })
     }
-    
+
+    const deleteTeam = async (id) => {
+        try {
+            await axios.delete(`/api/teams/${id}`)
+            history.push('/teams')
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     return (
         <div style={{margin: '2em'}}>
             <Card.Group>
@@ -77,8 +98,10 @@ const Team = () => {
                         <h2>Stadium: {team.stadium}</h2>
                     </Card.Content>
                     <Card.Content style={{display: 'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
-                        <Button>Update Team</Button>
-                        <Button>Delete Team</Button>
+                    <Link to={`/teams/${team.id}/edit`} >
+                        <Button>Update</Button>
+                    </Link>
+                        <Button onClick={()=> deleteTeam(team.id)}>Delete Team</Button>
                     </Card.Content>
                 </Card>
             </Card.Group>

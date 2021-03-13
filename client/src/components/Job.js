@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import {useParams, useHistory} from 'react-router-dom'
+import {useParams, useHistory, Link} from 'react-router-dom'
+import { Button, Card } from 'semantic-ui-react'
 // import Jobs from './Jobs';
 
 const Job = () => {
@@ -12,12 +13,12 @@ const Job = () => {
 const getJobs = async () => {
   try {
     let res = await axios.get(`/api/jobs/${id}`)
-    console.log(res)
-    setJobs(res.data)
-    console.jog(res.data.id)
+    console.log(res.data)
+    setJobs(res.data.job)
+    console.log(res.data.id)
   }
   catch (error) {
-    alert('error check console')
+    alert(error)
   }
 }
 const deleteJob = async () => {
@@ -36,10 +37,23 @@ const renderJobs = () => {
     )
   })
 }
+
   return(
-    <div>
-      <h1>Hello</h1>
-    </div> 
+    <>
+    <Button onClick={()=>history.goBack()}>Go Back</Button>
+    <Card>
+      <Card.Content>
+        <Card.Header style={{display:'flex', justifyContent: 'space between'}}>{jobs.team}</Card.Header>
+        <Card.Meta>{jobs.position}</Card.Meta>
+        <Card.Meta>{jobs.salary}</Card.Meta>
+        <Card.Meta>{jobs.location}</Card.Meta>
+        <Button color='red' onClick={deleteJob}>Delete</Button>
+        <Link to={{ pathname:`/jobs/${id}/edit`, jobs: jobs}}>
+          <Button>Update</Button>
+        </Link>
+      </Card.Content>
+    </Card>
+    </>
   )
   }
 
