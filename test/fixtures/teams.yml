@@ -2,6 +2,12 @@
 
 one:
   name: MyString
+  coach: MyString
+  mascot: MyString
+  stadium: MyString
 
 two:
   name: MyString
+  coach: MyString
+  mascot: MyString
+  stadium: MyString

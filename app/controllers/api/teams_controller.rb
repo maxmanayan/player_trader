@@ -33,7 +33,7 @@ class Api::TeamsController < ApplicationController
   private
 
   def team_params
-    params.require(:team).permit(:name)
+    params.require(:team).permit(:name, :coach, :mascot, :stadium)
   end
 
 end

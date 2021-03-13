@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_12_213528) do
+ActiveRecord::Schema.define(version: 2021_03_12_235316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
-    t.text "description"
+    t.string "author"
+    t.text "body"
+    t.string "source"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -26,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_03_12_213528) do
     t.string "position"
     t.string "team"
     t.integer "salary"
+    t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -34,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_03_12_213528) do
     t.string "name"
     t.string "position"
     t.integer "value"
+    t.integer "age"
     t.bigint "team_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -42,6 +46,9 @@ ActiveRecord::Schema.define(version: 2021_03_12_213528) do
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
+    t.string "coach"
+    t.string "mascot"
+    t.string "stadium"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
