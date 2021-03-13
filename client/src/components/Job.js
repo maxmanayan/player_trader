@@ -39,7 +39,7 @@ const renderJobs = () => {
 }
 
   return(
-    <>
+    <div style={{margin: '2em'}}>
     <Button onClick={()=>history.goBack()}>Go Back</Button>
     <Card>
       <Card.Content>
@@ -53,7 +53,7 @@ const renderJobs = () => {
         </Link>
       </Card.Content>
     </Card>
-    </>
+    </div>
   )
   }
 
