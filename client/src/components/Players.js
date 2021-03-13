@@ -36,18 +36,6 @@ const Players = () => {
                             <Button>View</Button>
                         </Link>
                     </Card.Content>
-                    {/* <Card.Content extra>
-                    <div className='ui two buttons'>
-                        <Link to={`/teams/${id}/players/${player.id}/edit`}>
-                            <Button basic color='green'>
-                            Update
-                            </Button>
-                        </Link>
-                        <Button onClick={() => deletePlayer(id, player.id)} basic color='red'>
-                        Delete
-                        </Button>
-                    </div>
-                    </Card.Content> */}
                 </Card>
             
             </Card.Group>
