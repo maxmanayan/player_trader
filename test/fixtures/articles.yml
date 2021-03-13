@@ -2,8 +2,12 @@
 
 one:
   title: MyString
-  description: MyText
+  author: MyString
+  body: MyText
+  source: MyString
 
 two:
   title: MyString
-  description: MyText
+  author: MyString
+  body: MyText
+  source: MyString

@@ -22,19 +22,24 @@ Article.destroy_all
     position: Faker::Sports::Football.position,
     team: Faker::Sports::Football.team,
     salary: Faker::Number.within(range: 1..20),
+    location: Faker::Team.state,
   )
 end
 
 10.times do 
   team = Team.create(
     name: Faker::Sports::Football.team,
+    coach: Faker::Sports::Football.coach,
+    mascot: Faker::Team.mascot, 
+    stadium: Faker::WorldCup.stadium,
   )
 
   11.times do
     team.players.create(
       name: Faker::Sports::Football.player,
       position: Faker::Sports::Football.position,
-      value: Faker::Number.within(range: 1..20),
+      value: Faker::Number.within(range: 1..70),
+      age: Faker::Number.within(range: 18..35),
     )
   end
 end
@@ -42,8 +47,10 @@ end
 
 10.times do
   Article.create(
-    title: Faker::Job.title,
-    description: Faker::Job.employment_type,
+    title: Faker::Book.title,
+    author: Faker::Book.author,
+    body: Faker::Quote.yoda,
+    source: Faker::Book.publisher,
   )
 end
 

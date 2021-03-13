@@ -4,8 +4,10 @@ one:
   position: MyString
   team: MyString
   salary: 1
+  location: MyString
 
 two:
   position: MyString
   team: MyString
   salary: 1
+  location: MyString
