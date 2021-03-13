@@ -37,7 +37,7 @@ const Teams = () => {
         return teams.map (team => {
             return (
                 
-                <Card>
+                <Card style={{padding:'10px', margin:'10px'}}>
                  <Card.Content>
                  <Link to={`/teams/${team.id}`}>
                 <Card.Header>{team.name}
@@ -65,7 +65,7 @@ const Teams = () => {
     }
     return (
         <div className='teams-page'>
-            <Card fluid color='blue'>
+            <Card fluid color='blue' >
             <div style={{display:'flex', justifyContent:'space-between'}}>
             <h1>Teams</h1>
             <Link to={`/teams/new`}>

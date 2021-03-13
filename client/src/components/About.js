@@ -47,7 +47,18 @@ const About = () => {
     </Segment>
     </div>
     </div>
-    <footer></footer>
+    <div style={{alignItems: 'center'}}>
+    <footer style={{width:'800px', alignItems:'center', margin:'auto', paddingTop:'180px'}}>
+
+    <Header as='h2' attached='top' style={{textAlign: 'center'}}>
+      Creators of Player Trader
+    </Header>
+    <Segment attached style={{textAlign: 'center'}}>
+      Player Trader was made in one day during the DevPointLabs Hackathon by Team Bears: which includes Santiago Ventura, Trey Kemp, Max Manayan, and Ethan McNeal
+    </Segment>
+
+    </footer>
+    </div>
 
   </div>
 
