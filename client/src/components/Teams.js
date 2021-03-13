@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Button, Card, CardDescription } from "semantic-ui-react"
+import { Button, Card, CardDescription, Grid } from "semantic-ui-react"
 import EditTeamForm from "./EditTeamForm"
 import axios from 'axios'
 import { Link } from "react-router-dom"
@@ -66,14 +66,18 @@ const Teams = () => {
     return (
         <div className='teams-page'>
             <Card fluid color='blue'>
-            <div style={{display:'flex', justifyContent:'space-between', padding:'10px'}}>
+            <div style={{display:'flex', justifyContent:'space-between'}}>
             <h1>Teams</h1>
             <Link to={`/teams/new`}>
             <Button>New Team Form</Button>
             </Link>
             </div>
             </Card>
-            {renderTeams()}
+            <Grid style={{display: 'flex', justifyContent: 'center', margin: '1em'}}>
+                {renderTeams()}
+
+             </Grid>
+           
             </div>
 
 
