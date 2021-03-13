@@ -34,8 +34,8 @@ function App() {
       <Route exact path = '/jobs' component={Jobs} />
       <Route exact path = '/jobs/new' component={NewFormJob}/>
       <Route exact path = '/jobs/:id/edit' component={EditJobForm}/> 
-      <Route exact path = '/jobs/:id' component={Jobs}/>
-      <Route exact path = '/job/:id' component={Job} />
+      <Route exact path = '/jobs/' component={Jobs}/>
+      <Route exact path = '/jobs/:id' component={Job} />
       <Route exact path = '/articles' component={Articles} />
       <Route exact path = '/players' component={Players} />
     </Switch>

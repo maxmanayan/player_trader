@@ -4,7 +4,7 @@ import { Button, Form } from "semantic-ui-react"
 import { useState} from 'react'
 
 const NewFormJob = (props) => {
-  const [job, setJob] = useState('')
+  // const [job, setJob] = useState('')
   const [team, setTeam] = useState('')
   const [position, setPosition] = useState('')
   const [salary, setSalary] = useState('')
