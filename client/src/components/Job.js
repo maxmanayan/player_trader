@@ -6,7 +6,7 @@ import {useParams, useHistory} from 'react-router-dom'
 const Job = () => {
   const [jobs, setJobs] = useState([])
   const { id } = useParams();
-  // let history = useHistory();
+  let history = useHistory();
 
 
 const getJobs = async () => {
@@ -19,6 +19,10 @@ const getJobs = async () => {
   catch (error) {
     alert('error check console')
   }
+}
+const deleteJob = async () => {
+  let res = await axios.delete(`/api/jobs/${id}`)
+  history.pushState('/jobs')
 }
 
 useEffect(() => {
