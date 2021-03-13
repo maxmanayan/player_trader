@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { Card, Button, Container, CardMeta, CardHeader } from 'semantic-ui-react'
+import { Card, Button, Container, CardMeta, CardHeader, CardDescription, Grid } from 'semantic-ui-react'
 // import { useParams, useHistory, Link } from 'react-router-dom'
 // import { Button, Card } from 'semantic-ui-react'
 //import NewArticleForm from './ArticleForms'
@@ -34,18 +34,24 @@ import { Card, Button, Container, CardMeta, CardHeader } from 'semantic-ui-react
         const renderArticles =()=>{
             return articles.map( article => {
               return(
-                        <Card to={`article/${id}`}>
-                            <div>
+                  
+                        <Card to={`article/${id}`} style={{margin:'10px', padding:'15px'}}>
                                <Card.Header>
-                                    {article.title}
+                                    <h2>{article.title}</h2>
                                 </Card.Header>
-                                <Card.Description>
+                                <Card.Meta>
                                     {article.author}
-                                </Card.Description>
-                                {article.body}
+                                </Card.Meta>
+                                <CardDescription>
+                                <h5>{article.body}</h5>
+                                </CardDescription>
+                                <Card.Meta>
                                 {article.source}
-                            </div>
+                                </Card.Meta>
+                                
+                           
                         </Card>
+                       
                     )
                 })
               }
@@ -54,7 +60,7 @@ import { Card, Button, Container, CardMeta, CardHeader } from 'semantic-ui-react
 
         return (
             <div>
-                        <h1>Articles</h1>
+                        {/* <h1>Articles</h1>
                     <Link to={`articles/new`}>
                     <Button>New Article</Button>
                     </Link>                   
@@ -80,9 +86,23 @@ import { Card, Button, Container, CardMeta, CardHeader } from 'semantic-ui-react
                                                                
                         </div>
 
-                        </div>
-                                   
+                        </div> */}
+                        
+                        
+                         <Card fluid color='grey' >
+                         <div style={{display: 'flex', justifyContent:'space-between'}}>
+                        <h1>Articles </h1>
+                        <Link to={`articles/new`}>
+                    <Button>New Article</Button>
+                    
+                    </Link>
+                    </div>
+                    </Card>
+                    
+                    
+                    <Grid>               
                     {renderArticles()}
+                    </Grid>
             </div>
         )
         }
