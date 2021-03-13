@@ -98,7 +98,9 @@ const Team = () => {
                         <h2>Stadium: {team.stadium}</h2>
                     </Card.Content>
                     <Card.Content style={{display: 'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
-                        <Button>Update Team</Button>
+                    <Link to={`/teams/${team.id}/edit`} >
+                        <Button>Update</Button>
+                    </Link>
                         <Button onClick={()=> deleteTeam(team.id)}>Delete Team</Button>
                     </Card.Content>
                 </Card>
