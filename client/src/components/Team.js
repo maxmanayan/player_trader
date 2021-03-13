@@ -65,6 +65,14 @@ const Team = () => {
             )
         })
     }
+
+    const deletePlayer = async () => {
+        try {
+            
+        } catch (err) {
+            console.log(err)
+        }
+    }
     
     return (
         <div style={{margin: '2em'}}>
