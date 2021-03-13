@@ -55,6 +55,7 @@ const NewFormJob = (props) => {
           defaultValue={location}
           placeholder='Location' />
         </Form.Field>
+        <Button type='go back'>Go Back</Button>
         <Button type='submit'>Submit</Button>
       </Form>
     </div>

@@ -71,6 +71,7 @@ const UpdateJobForm = (props) => {
               value={location}
               />
             </Form.Field>
+            <Button type='go back'>Go Back</Button>
             <Button type='submit'>Submit</Button>
       </Form>
     </div>

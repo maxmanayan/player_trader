@@ -32,9 +32,10 @@ const Jobs = () => {
     const renderJobs =() =>{
         return jobs.map( job => {
             return (
-                <Card>
+                <div style={{margin: '2em'}}>
+                <Card  border='dark' style={{ width: '18rem', display: 'flex', justifyContent: 'space-between'}}>
                     <Link to={`/jobs/${job.id}`}>
-                <Card.Header>{job.team}</Card.Header>
+                <Card.Header style={{display:'flex', justifyContent:'space-between'}}>{job.team}</Card.Header>
                     </Link>
 
                 <Card.Meta>{job.id}</Card.Meta>
@@ -42,10 +43,11 @@ const Jobs = () => {
                 <Card.Description>{job.salary}</Card.Description>
                 <Card.Description>{job.location}</Card.Description>
                 <Link to={`/jobs/${job.id}/edit`}>
-                <Button>Edit</Button>
+                <Button style={{display: 'flex' , justifyContent: 'space-between'}}>Edit</Button>
                 </Link>
                 <Button onClick={()=>deleteJob(job.id)} color='red'>Delete</Button>
                 </Card>
+                </div>
             )
         })
     }
@@ -53,7 +55,7 @@ const Jobs = () => {
         <div>
              <h1>Jobs</h1>
              <Link to={`/jobs/new`}>
-                 <Button>New Job</Button>
+                 <Button style={{marginBottom:'20px'}} color='green'>New Job</Button>
              </Link>
              {renderJobs()} 
         </div>
