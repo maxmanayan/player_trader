@@ -48,9 +48,11 @@ const Team = () => {
                         </Card.Content>
                         <Card.Content extra>
                         <div className='ui two buttons'>
-                            <Button basic color='green'>
-                            Update
-                            </Button>
+                            <Link to={`/teams/${id}/players/${player.id}/edit`}>
+                                <Button basic color='green'>
+                                Update
+                                </Button>
+                            </Link>
                             <Button basic color='red'>
                             Delete
                             </Button>
