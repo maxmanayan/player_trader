@@ -4,7 +4,7 @@ import { Button } from "semantic-ui-react"
 const Homepage = () => {
 
 return (
-    <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+    <div className='homepage' style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
     <h1> Player Trader </h1>
     
     <Link to='/teams'>

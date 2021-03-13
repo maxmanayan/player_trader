@@ -20,7 +20,7 @@ import NewTeamForm from './components/NewTeamForm';
 
 function App() {
   return (
-    <>
+    <div>
     <Navbar />
     <Switch>
       <Route exact path = '/' component={Homepage} />
@@ -39,7 +39,7 @@ function App() {
       <Route exact path = '/articles' component={Articles} />
       <Route exact path = '/players' component={Players} />
     </Switch>
-    </>
+    </div>
   );
 }
 
