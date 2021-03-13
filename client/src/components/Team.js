@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { Button, Card } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
@@ -10,6 +10,8 @@ const Team = () => {
     const [players, setPlayers] = useState([])
 
     const {id} = useParams()
+
+    const history = useHistory()
 
     useEffect(()=>{
         getTeam()
@@ -76,6 +78,15 @@ const Team = () => {
         })
     }
 
+    const deleteTeam = async (id) => {
+        try {
+            await axios.delete(`/api/teams/${id}`)
+            history.push('/teams')
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     return (
         <div style={{margin: '2em'}}>
             <Card.Group>
@@ -88,7 +99,7 @@ const Team = () => {
                     </Card.Content>
                     <Card.Content style={{display: 'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
                         <Button>Update Team</Button>
-                        <Button>Delete Team</Button>
+                        <Button onClick={()=> deleteTeam(team.id)}>Delete Team</Button>
                     </Card.Content>
                 </Card>
             </Card.Group>
