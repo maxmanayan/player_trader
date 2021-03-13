@@ -57,9 +57,14 @@ const Players = () => {
     }
 
     return (
-        <div>
-            <h1>All players</h1>
-            <Grid>
+        <div className='players'>
+            <Card fluid color='gray' style={{background: 'whitesmoke'}}>
+                <Card.Content style={{display: 'flex', justifyContent: 'center'}}>
+                  <Card.Header>All players</Card.Header>
+
+                </Card.Content>
+            </Card>
+            <Grid style={{marginTop: '1em'}}>
              {renderAllPlayers()}
 
             </Grid>
