@@ -11,6 +11,17 @@ const Teams = () => {
         getTeams()
     },[])
 
+    const deleteTeam = async(id) => {
+        try {
+            await axios.delete(`/api/teams/${id}`)
+            window.location.reload()
+            
+        } catch (error) {
+            alert(error)
+            
+        }
+    }
+
 
     const getTeams = async() =>{
     try{ 
@@ -41,10 +52,10 @@ const Teams = () => {
                     <Card.Description>
                      {team.stadium}
                     </Card.Description> 
-                    <Link to={`/teams/${team.id}/edit`}>
+                    <Link to={`/teams/${team.id}/edit`} >
                     <Button>Edit</Button>
                     </Link>
-                    <Button color='red'>Delete</Button>
+                    <Button color='red' onClick={()=>deleteTeam(team.id)}>Delete</Button>
                  </Card.Content> 
                  </Card>
                  
