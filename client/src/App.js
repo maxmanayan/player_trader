@@ -14,6 +14,7 @@ import NewPlayerForm from './components/NewPlayerForm';
 import EditTeamForm from './components/EditTeamForm';
 import EditPlayerForm from './components/EditPlayerForm';
 import EditJobForm from './components/EditJobForm';
+import NewFormJob from './components/NewJobForm'
 
 import NewTeamForm from './components/NewTeamForm';
 import NewArticlesForm from './components/NewArticlesForm';
@@ -32,9 +33,10 @@ function App() {
       <Route exact path = '/teams/:team_id/players/:id/edit' component={EditPlayerForm} />
       <Route exact path = '/about' component={About} />
       <Route exact path = '/jobs' component={Jobs} />
+      <Route exact path = '/jobs/new' component={NewFormJob}/>
       <Route exact path = '/jobs/:id/edit' component={EditJobForm}/> 
-      <Route exact path = '/jobs/:id' component={Jobs}/>
-      <Route exact path = '/job/:id' component={Job} />
+      <Route exact path = '/jobs/' component={Jobs}/>
+      <Route exact path = '/jobs/:id' component={Job} />
       <Route exact path = '/articles' component={Articles} />
       <Route exact path = '/articles/new' component={NewArticlesForm} />
       <Route exact path = '/players' component={Players} />

@@ -25,6 +25,20 @@ const UpdateJobForm = (props) => {
     console.log({})
   }
 
+  const getJobs = async() => {try{
+    let res = await axios.get(`/api/jobs/${id}`)
+    setTeam(res.data.job.team)
+    setPosition(res.data.job.position)
+    setSalary(res.data.job.salary)
+    setLocation(res.data.job.location)
+  }catch (err){
+    alert(err)
+  }
+}
+  useEffect(() => {
+    getJobs()
+  }, [])
+
   return (
     <div>
       <h1>Update Jobs</h1>
