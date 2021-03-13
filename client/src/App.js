@@ -17,6 +17,7 @@ import EditJobForm from './components/EditJobForm';
 import NewFormJob from './components/NewJobForm'
 
 import NewTeamForm from './components/NewTeamForm';
+import NewArticlesForm from './components/NewArticlesForm';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
       <Route exact path = '/jobs/' component={Jobs}/>
       <Route exact path = '/jobs/:id' component={Job} />
       <Route exact path = '/articles' component={Articles} />
+      <Route exact path = '/articles/new' component={NewArticlesForm} />
       <Route exact path = '/players' component={Players} />
     </Switch>
     </>

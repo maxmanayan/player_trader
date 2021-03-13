@@ -23,7 +23,7 @@ const getJobs = async () => {
 }
 const deleteJob = async () => {
   let res = await axios.delete(`/api/jobs/${id}`)
-  history.pushState('/jobs')
+  history.push('/jobs')
 }
 
 useEffect(() => {
