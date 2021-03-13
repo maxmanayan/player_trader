@@ -22,7 +22,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <>
+    <div>
     <Navbar />
     <Switch>
       <Route exact path = '/' component={Homepage} />
@@ -43,7 +43,7 @@ function App() {
       <Route exact path = '/players' component={Players} />
     </Switch>
     {/* <Footer /> */}
-    </>
+    </div>
   );
 }
 

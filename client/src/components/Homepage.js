@@ -4,23 +4,23 @@ import { Button } from "semantic-ui-react"
 const Homepage = () => {
 
 return (
-    <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
-    <h1> Player Trader </h1>
+    <div className='homepage' style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+    <h1 style={{margin:'20px'}}> Player Trader </h1>
     
     <Link to='/teams'>
-    <Button style={{margin: '5px'}}>Teams</Button>
+    <Button color='blue' style={{margin: '15px', width:'150px'}}>Teams</Button>
     </Link>
     <Link to='/players'>
-    <Button style={{margin: '5px'}}>Players</Button>
+    <Button color='blue' style={{margin: '15px', width:'150px'}}>Players</Button>
     </Link>
     <Link to='/jobs'>
-    <Button style={{margin: '5px'}}>Jobs</Button>
+    <Button color='blue' style={{margin: '15px', width:'150px'}}>Jobs</Button>
     </Link>
     <Link to='/articles'>
-    <Button style={{margin: '5px'}}>Articles</Button>
+    <Button color='blue' style={{margin: '15px', width:'150px'}}>Articles</Button>
     </Link>
     <Link to='/about'>
-    <Button style={{margin: '5px'}}>About</Button>
+    <Button color='blue' style={{margin: '15px', width:'150px'}}>About</Button>
     </Link>
     
     </div>
