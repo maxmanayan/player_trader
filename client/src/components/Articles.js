@@ -36,8 +36,12 @@ import { Card, Button, Container, CardMeta, CardHeader } from 'semantic-ui-react
               return(
                         <Card to={`article/${id}`}>
                             <div>
-                                {article.title}
-                                {article.author}
+                               <Card.Header>
+                                    {article.title}
+                                </Card.Header>
+                                <Card.Description>
+                                    {article.author}
+                                </Card.Description>
                                 {article.body}
                                 {article.source}
                             </div>
@@ -49,22 +53,35 @@ import { Card, Button, Container, CardMeta, CardHeader } from 'semantic-ui-react
 
 
         return (
-        
             <div>
-                <Container fluid color='pink' >
                         <h1>Articles</h1>
                     <Link to={`articles/new`}>
                     <Button>New Article</Button>
                     </Link>                   
-                    
                         <div>
-                            <CardHeader>{title}</CardHeader>
-                            <CardMeta>{author}</CardMeta>
-                            <CardMeta>{body}</CardMeta>
-                            <CardMeta>{source}</CardMeta>
-                        </div> 
-                    
-                </Container>
+                            <div class="ui items">
+                                <div class="item">
+                                    <div class="image">
+                                    
+                                    </div>
+                                    <div class="content">
+                                    <a class="header">Header</a>
+                                    <div class="meta">
+                                        <span>Description</span>
+                                    </div>
+                                    <div class="description">
+                                        <p></p>
+                                    </div>
+                                    <div class="extra">
+                                        Additional Details
+                                    </div>
+                                </div>
+                            </div>
+                                                               
+                        </div>
+
+                        </div>
+                                   
                     {renderArticles()}
             </div>
         )
@@ -73,9 +90,6 @@ import { Card, Button, Container, CardMeta, CardHeader } from 'semantic-ui-react
     export default Articles
 
 
-    // <Card fluid color='blue'>
-    // <div style={{display:'flex', justifyContent:'space-between', padding:'10px'}}>
-    // <h1>Teams</h1>
-    // <Link to={`/teams/new`}>
-    // <Button>New Team Form</Button>
-    // </Link>
+
+
+  
