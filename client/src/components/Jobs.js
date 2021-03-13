@@ -33,8 +33,11 @@ const Jobs = () => {
         return jobs.map( job => {
             return (
                 <Card>
-                <Card.Content>{job.id}</Card.Content>
+                    <Link to={`/jobs/${job.id}`}>
                 <Card.Header>{job.team}</Card.Header>
+                    </Link>
+
+                <Card.Meta>{job.id}</Card.Meta>
                 <Card.Meta>{job.position}</Card.Meta>
                 <Card.Description>{job.salary}</Card.Description>
                 <Card.Description>{job.location}</Card.Description>
@@ -52,8 +55,7 @@ const Jobs = () => {
              <Link to={`/jobs/new`}>
                  <Button>New Job</Button>
              </Link>
-             {renderJobs()}
-             
+             {renderJobs()} 
         </div>
     
     
