@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import Job from './Job'
-import { Button, Card } from 'semantic-ui-react'
+import { Button, Card, Grid } from 'semantic-ui-react'
 import {Link, useHistory, useParams} from 'react-router-dom'
     
 const Jobs = () => {
@@ -35,29 +35,39 @@ const Jobs = () => {
                 <div style={{margin: '2em'}}>
                 <Card  border='dark' style={{ width: '18rem', display: 'flex', justifyContent: 'space-between'}}>
                     <Link to={`/jobs/${job.id}`}>
-                <Card.Header>{job.team}</Card.Header>
+                        <Card.Header>{job.team}</Card.Header>
                     </Link>
 
-                <Card.Meta>{job.id}</Card.Meta>
-                <Card.Meta>{job.position}</Card.Meta>
-                <Card.Description>{job.salary}</Card.Description>
-                <Card.Description>{job.location}</Card.Description>
-                <Link to={`/jobs/${job.id}/edit`}>
-                <Button>Edit</Button>
-                </Link>
-                <Button style={{display: 'flex' , justifyContent: 'space-between'}} onClick={()=>deleteJob(job.id)} color='red'>Delete</Button>
+                    <Card.Meta>position: {job.position}</Card.Meta>
+                    <Card.Meta>salary: ${job.salary} million</Card.Meta>
+                    <Card.Meta>location: {job.location}</Card.Meta>
+                    <Card.Content>
+                        <Link to={`/jobs/${job.id}/edit`}>
+                            <Button>Edit</Button>
+                        </Link>
+                        <Button onClick={()=>deleteJob(job.id)} color='red'>Delete</Button>
+                    </Card.Content>
                 </Card>
                 </div>
             )
         })
     }
     return (
-        <div>
-             <h1>Jobs</h1>
-             <Link to={`/jobs/new`}>
-                 <Button style={{display: 'flex' , justifyContent: 'space-between' , marginBottom:'20px'}} color='green'>New Job</Button>
-             </Link>
-             {renderJobs()} 
+        <div className='jobs'>
+            <Card fluid color='gray' style={{background: 'whitesmoke'}}>
+                <Card.Content style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', marginLeft: '-10%'}}>
+                  <Card.Header style={{fontSize: '2em'}}>Jobs</Card.Header>
+
+                    <Link to={`/jobs/new`}>
+                        <Button style={{display: 'flex' , justifyContent: 'space-between' }} color='green'>New Job</Button>
+                    </Link>
+
+                </Card.Content>
+            </Card>
+             <Grid style={{display: 'flex', justifyContent: 'center'}}>
+                {renderJobs()} 
+
+             </Grid>
         </div>
     
     
