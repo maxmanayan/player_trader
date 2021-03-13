@@ -38,9 +38,9 @@ const EditPlayerForm = () => {
   }, [])
 
   return(
-    <div style={{margin: '2em'}}>
+    <div style={{margin: '3em', background: 'whitesmoke', padding: '2em'}}>
       <Form onSubmit={handleSubmit}>
-        <h1>Edit Player Form</h1>
+        <h1>Edit Player Form ~ {name}</h1>
         <Form.Field>
           <label>Player Name</label>
           <input defaultValue={name} value={name} onChange={(e) => setName(e.target.value)} placeholder='Player Name' />
